@@ -13,6 +13,7 @@
 		9BFB1D5B1E8B38090081900C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BFB1D591E8B38090081900C /* LaunchScreen.storyboard */; };
 		9BFB1D631E8B3C1D0081900C /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB1D621E8B3C1D0081900C /* MainVC.swift */; };
 		9BFB1D651E8C0FE40081900C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BFB1D641E8C0FE40081900C /* Assets.xcassets */; };
+		9BFB1D671E8C13140081900C /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB1D661E8C13140081900C /* CustomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		9BFB1D5C1E8B38090081900C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BFB1D621E8B3C1D0081900C /* MainVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		9BFB1D641E8C0FE40081900C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BFB1D661E8C13140081900C /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				9BFB1D4D1E8B38090081900C /* AppDelegate.swift */,
 				9BFB1D511E8B38090081900C /* Main.storyboard */,
+				9BFB1D661E8C13140081900C /* CustomButton.swift */,
 				9BFB1D621E8B3C1D0081900C /* MainVC.swift */,
 				9BFB1D591E8B38090081900C /* LaunchScreen.storyboard */,
 				9BFB1D5C1E8B38090081900C /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9BFB1D671E8C13140081900C /* CustomButton.swift in Sources */,
 				9BFB1D631E8B3C1D0081900C /* MainVC.swift in Sources */,
 				9BFB1D4E1E8B38090081900C /* AppDelegate.swift in Sources */,
 				9BFB1D561E8B38090081900C /* Location_Tracker.xcdatamodeld in Sources */,
