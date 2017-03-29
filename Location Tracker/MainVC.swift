@@ -8,19 +8,24 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, NSFetchedResultsControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var addressLine1: UILabel!
     @IBOutlet weak var addressLine2: UILabel!
     
     var locationManger: CLLocationManager!
+    var controller: NSFetchedResultsController<Record>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         tableView.delegate = self
         tableView.dataSource = self
+        
+        fetchRecords()
         
         locationManger = CLLocationManager()
         locationManger.delegate = self
@@ -32,11 +37,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     // TABLE VIEW
     func numberOfSections(in tableView: UITableView) -> Int {
+        if let sections = controller.sections {
+            return sections.count
+        }
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5;
+        if let sections = controller.sections {
+            return sections[section].numberOfObjects
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -45,6 +57,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         }
         return UITableViewCell();
     }
+    
+    
 
     
     // LOCATION MANAGER
@@ -67,6 +81,47 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         }
 
     }
+    
+    
+    // MARK: FRC
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.beginUpdates()
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case.insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        case.delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            break
+        case.update:
+            if let indexPath = indexPath {
+                if let cell = tableView.cellForRow(at: indexPath) {
+                    configureCell(cell: cell, indexPath: indexPath)
+                }
+            }
+            break
+        case.move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .fade)
+            }
+            break
+        }
+    }
+
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error while updating location: " + error.localizedDescription)
@@ -94,5 +149,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             addressLine2.text = line2
             
         }
+    }
+    
+    func fetchRecords() {
+        let fetchRequest: NSFetchRequest<Record> = Record.fetchRequest()
+        
+        let dateSort = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+    }
+    
+    func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
+        
     }
 }
