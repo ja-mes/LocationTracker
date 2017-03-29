@@ -12,6 +12,7 @@ import CoreLocation
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     @IBOutlet weak var tableView: UITableView!
     
+    var locationManger: CLLocationManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,14 +20,15 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         tableView.delegate = self
         tableView.dataSource = self
         
-        let locationManager = CLLocationManager()
-        
-        locationManager.delegate = self
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        locationManger = CLLocationManager()
+        locationManger.delegate = self
+        locationManger.requestWhenInUseAuthorization()
+        locationManger.startUpdatingLocation()
+
     }
     
+    
+    // TABLE VIEW
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -42,11 +44,42 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         return UITableViewCell();
     }
 
+    
+    // LOCATION MANAGER
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(locations[0])
+        
+        if let location = locationManger.location {
+            
+            CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
+                if let error = error {
+                    print("Reverse geocode failed with error" + error.localizedDescription)
+                    return
+                }
+                
+                if let pm = placemarks?[0] {
+                    self.displayLocation(placemark: pm)
+                }
+                
+            }
+            
+        }
+
     }
     
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Error while updating location: " + error.localizedDescription)
+    }
+    
+    
+    // IBACTIONS
     @IBAction func saveButtonPressed(_ sender: Any) {
         
+    }
+    
+    
+    // FUNCS
+    func displayLocation(placemark: CLPlacemark) {
+        print(placemark.locality ?? "")
+        print(placemark.postalCode ?? "")
     }
 }
