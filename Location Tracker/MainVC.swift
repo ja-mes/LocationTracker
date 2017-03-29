@@ -81,7 +81,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     // FUNCS
     func displayLocation(_ placemark: CLPlacemark) {
-        print(placemark.locality ?? "")
-        print(placemark.postalCode ?? "")
+        if  let locality = placemark.locality,
+            let subThroughfare = placemark.subThoroughfare,
+            let throughfare = placemark.thoroughfare,
+            let code = placemark.postalCode,
+            let area = placemark.administrativeArea {
+            
+            let line1 = "\(subThroughfare) \(throughfare)"
+            let line2 = "\(locality), \(area) \(code)"
+            
+            addressLine1.text = line1
+            addressLine2.text = line2
+            
+        }
     }
 }
