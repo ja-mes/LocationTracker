@@ -11,6 +11,8 @@ import CoreLocation
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var addressLine1: UILabel!
+    @IBOutlet weak var addressLine2: UILabel!
     
     var locationManger: CLLocationManager!
     
