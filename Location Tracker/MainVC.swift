@@ -57,7 +57,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
                 }
                 
                 if let pm = placemarks?[0] {
-                    self.displayLocation(placemark: pm)
+                    self.displayLocation(pm)
                 }
                 
             }
@@ -78,7 +78,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     
     // FUNCS
-    func displayLocation(placemark: CLPlacemark) {
+    func displayLocation(_ placemark: CLPlacemark) {
         print(placemark.locality ?? "")
         print(placemark.postalCode ?? "")
     }
