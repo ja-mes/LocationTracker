@@ -7,10 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
-class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     @IBOutlet weak var tableView: UITableView!
-    
     
     
     override func viewDidLoad() {
@@ -18,6 +18,13 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let locationManager = CLLocationManager()
+        
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,4 +42,11 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell();
     }
 
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(locations[0])
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        
+    }
 }
