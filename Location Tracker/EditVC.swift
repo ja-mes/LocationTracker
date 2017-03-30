@@ -30,8 +30,10 @@ class EditVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        addressField.text = record.addressLine1
-        cityField.text = record.addressLine2
+        addressField.text = record.address
+        cityField.text = record.city
+        stateField.text = record.state
+        zipField.text = record.zip
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
