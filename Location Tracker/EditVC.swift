@@ -8,7 +8,8 @@
 
 import UIKit
 
-class EditVC: UIViewController {
+class EditVC: UIViewController, UITextFieldDelegate {
+    @IBOutlet weak var scrollView: UIScrollView!
 
     @IBOutlet weak var addressField: CustomTextField!
     @IBOutlet weak var cityField: CustomTextField!
@@ -29,12 +30,53 @@ class EditVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        addressField.delegate = self
+        cityField.delegate = self
+        stateField.delegate = self
+        zipField.delegate = self
+        
 
         addressField.text = record.address
         cityField.text = record.city
         stateField.text = record.state
         zipField.text = record.zip
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
+    
+    // MARK: Keyboard
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func keyboardWillShow(notification:NSNotification){
+        
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.scrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        self.scrollView.contentInset = contentInset
+    }
+    
+    func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        self.scrollView.contentInset = contentInset
+    }
+    
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
+
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)

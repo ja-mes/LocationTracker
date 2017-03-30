@@ -134,7 +134,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         }
     }
     
-    
+      
     // IBACTIONS
     @IBAction func saveButtonPressed(_ sender: Any) {
         let item = Record(context: context)
