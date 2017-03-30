@@ -52,7 +52,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell") {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell") as? RecordCell {
             configureCell(cell: cell, indexPath: indexPath)
             return cell
         }
@@ -107,7 +107,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             break
         case.update:
             if let indexPath = indexPath {
-                if let cell = tableView.cellForRow(at: indexPath) {
+                if let cell = tableView.cellForRow(at: indexPath) as? RecordCell {
                     configureCell(cell: cell, indexPath: indexPath)
                 }
             }
@@ -132,7 +132,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     // IBACTIONS
     @IBAction func saveButtonPressed(_ sender: Any) {
         let item = Record(context: context)
-        item.addressLine1 = "foobar"
+        item.addressLine1 = addressLine1.text
+        item.addressLine2 = addressLine2.text
+        
+        item.date = NSDate()
+        
+        ad.saveContext()
     }
     
     
@@ -172,9 +177,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         }
     }
     
-    func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
+    func configureCell(cell: RecordCell, indexPath: IndexPath) {
         let record = controller.object(at: indexPath)
         
-        print(record.addressLine1)
+        cell.addressLine1.text = record.addressLine1
+        cell.addressLine2.text = record.addressLine2
     }
 }
