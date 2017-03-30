@@ -137,8 +137,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     // IBACTIONS
     @IBAction func saveButtonPressed(_ sender: Any) {
         let item = Record(context: context)
-        item.addressLine1 = addressLine1.text
-        item.addressLine2 = addressLine2.text
+        item.address = addressLine1.text
+
         
         item.date = NSDate()
         
@@ -191,7 +191,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     func configureCell(cell: RecordCell, indexPath: IndexPath) {
         let record = controller.object(at: indexPath)
         
-        cell.addressLine1.text = record.addressLine1
+        cell.addressLine1.text = record.address
         cell.addressLine2.text = record.addressLine2
         
         if let date = record.date {
@@ -204,5 +204,18 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             cell.dateLbl.text = dateFormatter.string(from: date as Date)
         }
         
+    }
+}
+
+
+extension Record {
+    var addressLine2: String? {
+        get {
+            if let city = city, let state = state, let zip = zip {
+                return "\(city), \(state) \(zip)"
+            }
+            
+            return nil
+        }
     }
 }
