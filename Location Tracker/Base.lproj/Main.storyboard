@@ -344,7 +344,7 @@
                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="this was so amazing" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0ze-nQ-a6V" customClass="CustomTextView" customModule="Location_Tracker" customModuleProvider="target">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0ze-nQ-a6V" customClass="CustomTextView" customModule="Location_Tracker" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="24.5" width="343" height="110"/>
                                                         <color key="backgroundColor" red="0.0039215686269999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
