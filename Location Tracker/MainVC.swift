@@ -187,10 +187,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
             
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "h:mm a"
-            let time = dateFormatter.string(from: date as Date)
+            cell.timeLbl.text = dateFormatter.string(from: date as Date)
             
-            cell.timeLbl.text = time
-            
+            dateFormatter.dateFormat = "MMMM d, yyyy"
+            cell.dateLbl.text = dateFormatter.string(from: date as Date)
         }
         
     }
