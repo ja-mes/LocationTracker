@@ -360,7 +360,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-k0-hhL">
-                                <rect key="frame" x="16" y="358.5" width="343" height="134.5"/>
+                                <rect key="frame" x="16" y="444.5" width="343" height="134.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEg-YF-doo">
                                         <rect key="frame" x="0.0" y="0.0" width="47.5" height="16.5"/>
@@ -394,19 +394,38 @@
                                     <constraint firstAttribute="trailing" secondItem="0ze-nQ-a6V" secondAttribute="trailing" id="4zH-Ed-ECr"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Ai-naw" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
+                                <rect key="frame" x="16" y="373.5" width="135" height="26"/>
+                                <color key="backgroundColor" red="0.99884438509999995" green="0.24269126360000001" blue="0.3373038471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="26" id="9nc-wo-OX8"/>
+                                    <constraint firstAttribute="width" constant="135" id="YRL-2K-M9d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="VIEW MAP">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="rounded">
+                                        <real key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bf1-k0-hhL" firstAttribute="top" secondItem="m72-qE-kK2" secondAttribute="bottom" constant="30" id="5QS-Jc-lxy"/>
+                            <constraint firstItem="lrY-Ai-naw" firstAttribute="leading" secondItem="HMR-zE-KEE" secondAttribute="leadingMargin" id="0bv-eA-lyQ"/>
                             <constraint firstAttribute="trailing" secondItem="LYg-ya-kYP" secondAttribute="trailing" id="9d7-eG-sie"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bf1-k0-hhL" secondAttribute="trailing" id="Jsw-2Q-dsS"/>
                             <constraint firstItem="LYg-ya-kYP" firstAttribute="leading" secondItem="HMR-zE-KEE" secondAttribute="leading" id="LEC-bf-oiq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m72-qE-kK2" secondAttribute="trailing" id="WoM-2B-jqf"/>
+                            <constraint firstItem="bf1-k0-hhL" firstAttribute="top" secondItem="lrY-Ai-naw" secondAttribute="bottom" constant="45" id="cCA-V2-cT9"/>
                             <constraint firstItem="m72-qE-kK2" firstAttribute="top" secondItem="LYg-ya-kYP" secondAttribute="bottom" constant="30" id="hZc-JU-ZpO"/>
                             <constraint firstItem="LYg-ya-kYP" firstAttribute="top" secondItem="kDs-7W-51G" secondAttribute="bottom" constant="12" id="lFE-Wk-5bG"/>
                             <constraint firstItem="m72-qE-kK2" firstAttribute="leading" secondItem="HMR-zE-KEE" secondAttribute="leadingMargin" id="njl-YF-fBc"/>
                             <constraint firstItem="bf1-k0-hhL" firstAttribute="leading" secondItem="HMR-zE-KEE" secondAttribute="leadingMargin" id="rUJ-3P-jDU"/>
                             <constraint firstItem="u97-LN-eRk" firstAttribute="centerX" secondItem="HMR-zE-KEE" secondAttribute="centerX" id="swn-LQ-jE2"/>
+                            <constraint firstItem="lrY-Ai-naw" firstAttribute="top" secondItem="m72-qE-kK2" secondAttribute="bottom" constant="45" id="vkB-v7-608"/>
                         </constraints>
                     </view>
                 </viewController>
