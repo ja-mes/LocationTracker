@@ -10,6 +10,7 @@
 		9B1646CD1E8D6A430026B0B9 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1646CC1E8D6A430026B0B9 /* EditVC.swift */; };
 		9B1646CF1E8D723F0026B0B9 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1646CE1E8D723E0026B0B9 /* CustomTextField.swift */; };
 		9B1646D11E8D78C30026B0B9 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1646D01E8D78C30026B0B9 /* CustomTextView.swift */; };
+		9B1646D41E8D7F0E0026B0B9 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B1646D31E8D7F0E0026B0B9 /* MapKit.framework */; };
 		9BFB1D4E1E8B38090081900C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB1D4D1E8B38090081900C /* AppDelegate.swift */; };
 		9BFB1D531E8B38090081900C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BFB1D511E8B38090081900C /* Main.storyboard */; };
 		9BFB1D561E8B38090081900C /* Location_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB1D541E8B38090081900C /* Location_Tracker.xcdatamodeld */; };
@@ -24,6 +25,7 @@
 		9B1646CC1E8D6A430026B0B9 /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		9B1646CE1E8D723E0026B0B9 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		9B1646D01E8D78C30026B0B9 /* CustomTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		9B1646D31E8D7F0E0026B0B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9BFB1D4A1E8B38090081900C /* Location Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFB1D4D1E8B38090081900C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BFB1D521E8B38090081900C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -41,17 +43,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B1646D41E8D7F0E0026B0B9 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9B1646D21E8D7F0D0026B0B9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B1646D31E8D7F0E0026B0B9 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9BFB1D411E8B38090081900C = {
 			isa = PBXGroup;
 			children = (
 				9BFB1D4C1E8B38090081900C /* Location Tracker */,
 				9BFB1D4B1E8B38090081900C /* Products */,
+				9B1646D21E8D7F0D0026B0B9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
