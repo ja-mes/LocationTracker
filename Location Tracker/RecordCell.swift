@@ -10,6 +10,12 @@ import UIKit
 
 class RecordCell: UITableViewCell {
 
+    @IBOutlet weak var addressLine1: UILabel!
+    @IBOutlet weak var addressLine2: UILabel!
+    @IBOutlet weak var timeLbl: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
     }
