@@ -8,14 +8,20 @@
 
 import UIKit
 
-class CustomTextField: UITextField {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+@IBDesignable class CustomTextField: UITextField {
+    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+        willSet {
+            self.layer.cornerRadius = newValue
+        }
     }
-    */
+    
+    @IBInspectable var textPadding: CGFloat = 0 {
+        willSet {
+            let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: newValue, height: frame.height))
+            leftView = paddingView
+            leftViewMode = UITextFieldViewMode.always
+        }
+    }
 
+  
 }
