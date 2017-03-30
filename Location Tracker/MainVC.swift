@@ -140,6 +140,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         ad.saveContext()
     }
     
+    @IBAction func editButtonPressed(_ sender: UIButton) {
+        let buttonPostion = sender.convert(CGPoint.zero, to: tableView)
+        if let indexPath = tableView.indexPathForRow(at: buttonPostion) {
+            performSegue(withIdentifier: "EditVC", sender: controller.object(at: indexPath))
+        }
+    }
     
     // FUNCS
     func displayLocation(_ placemark: CLPlacemark) {
