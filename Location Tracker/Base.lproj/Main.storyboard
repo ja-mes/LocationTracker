@@ -180,10 +180,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--EditVC-->
         <scene sceneID="Dxj-Yc-ZYp">
             <objects>
-                <viewController id="dIf-vh-E8a" sceneMemberID="viewController">
+                <viewController id="dIf-vh-E8a" customClass="EditVC" customModule="Location_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kDs-7W-51G"/>
                         <viewControllerLayoutGuide type="bottom" id="Xf5-zQ-7Xm"/>
@@ -202,6 +202,9 @@
                                         <state key="normal" title="Cancel">
                                             <color key="titleColor" red="0.93617749214172363" green="0.32650941610336304" blue="0.31376990675926208" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="dIf-vh-E8a" eventType="touchUpInside" id="FdC-l7-gkR"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EDIT ENTRY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u97-LN-eRk">
                                         <rect key="frame" x="131.5" y="0.0" width="112.5" height="36"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B1646CD1E8D6A430026B0B9 /* EditVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1646CC1E8D6A430026B0B9 /* EditVC.swift */; };
 		9BFB1D4E1E8B38090081900C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB1D4D1E8B38090081900C /* AppDelegate.swift */; };
 		9BFB1D531E8B38090081900C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BFB1D511E8B38090081900C /* Main.storyboard */; };
 		9BFB1D561E8B38090081900C /* Location_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BFB1D541E8B38090081900C /* Location_Tracker.xcdatamodeld */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B1646CC1E8D6A430026B0B9 /* EditVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditVC.swift; sourceTree = "<group>"; };
 		9BFB1D4A1E8B38090081900C /* Location Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFB1D4D1E8B38090081900C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BFB1D521E8B38090081900C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 				9BFB1D511E8B38090081900C /* Main.storyboard */,
 				9BFB1D661E8C13140081900C /* CustomButton.swift */,
 				9BFB1D621E8B3C1D0081900C /* MainVC.swift */,
+				9B1646CC1E8D6A430026B0B9 /* EditVC.swift */,
 				9BFB1D6A1E8C9A370081900C /* RecordCell.swift */,
 				9BFB1D591E8B38090081900C /* LaunchScreen.storyboard */,
 				9BFB1D5C1E8B38090081900C /* Info.plist */,
@@ -150,6 +153,7 @@
 				9BFB1D631E8B3C1D0081900C /* MainVC.swift in Sources */,
 				9BFB1D4E1E8B38090081900C /* AppDelegate.swift in Sources */,
 				9BFB1D561E8B38090081900C /* Location_Tracker.xcdatamodeld in Sources */,
+				9B1646CD1E8D6A430026B0B9 /* EditVC.swift in Sources */,
 				9BFB1D6B1E8C9A370081900C /* RecordCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
