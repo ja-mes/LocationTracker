@@ -170,6 +170,7 @@
                         <outlet property="addressLine1" destination="3W8-eU-gpC" id="cKx-q3-dcN"/>
                         <outlet property="addressLine2" destination="iHQ-Xs-saq" id="1pG-QG-zhL"/>
                         <outlet property="tableView" destination="Ied-oL-7Mz" id="NP0-l5-nuk"/>
+                        <segue destination="dIf-vh-E8a" kind="show" identifier="Edit" id="xbm-Vg-ACU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
