@@ -457,6 +457,12 @@
                             <constraint firstItem="Xf5-zQ-7Xm" firstAttribute="top" secondItem="gkn-CS-JL2" secondAttribute="bottom" id="vPD-cD-ryA"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="addressField" destination="JLQ-JY-L6k" id="XvE-5H-t49"/>
+                        <outlet property="cityField" destination="Axj-EZ-woJ" id="Q2a-rs-nQa"/>
+                        <outlet property="stateField" destination="3wa-PK-sKJ" id="W34-up-5eB"/>
+                        <outlet property="zipField" destination="PzP-cK-L32" id="wG8-Yy-drC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pg-ta-IPN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

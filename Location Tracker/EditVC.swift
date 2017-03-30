@@ -10,9 +10,28 @@ import UIKit
 
 class EditVC: UIViewController {
 
+    @IBOutlet weak var addressField: CustomTextField!
+    @IBOutlet weak var cityField: CustomTextField!
+    @IBOutlet weak var stateField: CustomTextField!
+    @IBOutlet weak var zipField: CustomTextField!
+    
+    
+    private var _record: Record!
+    
+    var record: Record {
+        get {
+            return _record
+        }
+        set {
+            _record = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        addressField.text = record.addressLine1
+        cityField.text = record.addressLine2
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {

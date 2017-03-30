@@ -34,6 +34,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "EditVC" {
+            if let destination = segue.destination as? EditVC {
+                if let record = sender as? Record {
+                    destination.record = record
+                }
+            }
+        }
+    }
+    
     
     // TABLE VIEW
     func numberOfSections(in tableView: UITableView) -> Int {
