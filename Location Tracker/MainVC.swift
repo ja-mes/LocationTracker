@@ -53,6 +53,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "MainCell") {
+            configureCell(cell: cell, indexPath: indexPath)
             return cell
         }
         return UITableViewCell();
@@ -157,10 +158,22 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         let dateSort = NSSortDescriptor(key: "date", ascending: true)
         fetchRequest.sortDescriptors = [dateSort]
         
-        let controller = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        let newController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = newController
+        
+        controller.delegate = self
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print(error)
+        }
     }
     
     func configureCell(cell: UITableViewCell, indexPath: IndexPath) {
+        let record = controller.object(at: indexPath)
         
+        print(record.addressLine1)
     }
 }
