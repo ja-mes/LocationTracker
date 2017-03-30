@@ -161,7 +161,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     func fetchRecords() {
         let fetchRequest: NSFetchRequest<Record> = Record.fetchRequest()
         
-        let dateSort = NSSortDescriptor(key: "date", ascending: true)
+        let dateSort = NSSortDescriptor(key: "date", ascending: false)
         fetchRequest.sortDescriptors = [dateSort]
         
         let newController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -182,5 +182,16 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         
         cell.addressLine1.text = record.addressLine1
         cell.addressLine2.text = record.addressLine2
+        
+        if let date = record.date {
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "h:mm a"
+            let time = dateFormatter.string(from: date as Date)
+            
+            cell.timeLbl.text = time
+            
+        }
+        
     }
 }
