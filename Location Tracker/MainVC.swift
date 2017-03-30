@@ -17,6 +17,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     var locationManger: CLLocationManager!
     var controller: NSFetchedResultsController<Record>!
+    var currentPlacemark: CLPlacemark?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,7 +139,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     @IBAction func saveButtonPressed(_ sender: Any) {
         let item = Record(context: context)
         item.address = addressLine1.text
-
+        
+        item.city = currentPlacemark?.locality
+        item.state = currentPlacemark?.administrativeArea
+        item.zip = currentPlacemark?.postalCode
         
         item.date = NSDate()
         
@@ -154,6 +158,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     // FUNCS
     func displayLocation(_ placemark: CLPlacemark) {
+        
+        currentPlacemark = placemark
+        
         if  let locality = placemark.locality,
             let subThroughfare = placemark.subThoroughfare,
             let throughfare = placemark.thoroughfare,
