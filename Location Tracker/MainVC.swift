@@ -206,16 +206,3 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         
     }
 }
-
-
-extension Record {
-    var addressLine2: String? {
-        get {
-            if let city = city, let state = state, let zip = zip {
-                return "\(city), \(state) \(zip)"
-            }
-            
-            return nil
-        }
-    }
-}
