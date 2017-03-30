@@ -65,9 +65,9 @@
 		9B1646D91E8DA9AF0026B0B9 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				9B1646D51E8D81A10026B0B9 /* MapVC.swift */,
 				9BFB1D621E8B3C1D0081900C /* MainVC.swift */,
 				9B1646CC1E8D6A430026B0B9 /* EditVC.swift */,
+				9B1646D51E8D81A10026B0B9 /* MapVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

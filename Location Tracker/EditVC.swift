@@ -39,4 +39,15 @@ class EditVC: UIViewController {
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    
+    @IBAction func saveButtonPressed(_ sender: UIButton) {
+        _record.address = addressField.text
+        _record.city = cityField.text
+        _record.state = stateField.text
+        _record.zip = zipField.text
+        
+        ad.saveContext()
+        
+        dismiss(animated: true, completion: nil)
+    }
 }

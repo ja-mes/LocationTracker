@@ -417,6 +417,9 @@
                                                         <state key="normal" title="SAVE">
                                                             <color key="titleColor" red="0.93617749210000001" green="0.32650941610000001" blue="0.3137699068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="saveButtonPressed:" destination="dIf-vh-E8a" eventType="touchUpInside" id="bOh-MM-OnN"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
