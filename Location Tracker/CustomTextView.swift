@@ -8,14 +8,23 @@
 
 import UIKit
 
-class CustomTextView: UITextView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+@IBDesignable class CustomTextView: UITextView {
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
+        willSet {
+            layer.borderWidth = newValue
+        }
     }
-    */
-
+    
+    @IBInspectable var borderColor: UIColor = UIColor.clear{
+        willSet {
+            layer.borderColor = newValue.cgColor
+        }
+    }
+    
+    @IBInspectable var cornerRadius: CGFloat = 0.0 {
+        willSet {
+            layer.cornerRadius = newValue
+        }
+    }
+    
 }

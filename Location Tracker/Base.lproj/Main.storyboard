@@ -359,23 +359,53 @@
                                     <constraint firstAttribute="trailing" secondItem="Sg0-3v-DXZ" secondAttribute="trailing" id="nwZ-J5-xN5"/>
                                 </constraints>
                             </stackView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="This was the most amazing place ever" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="XVg-FA-9yb">
-                                <rect key="frame" x="16" y="418" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bf1-k0-hhL">
+                                <rect key="frame" x="16" y="358.5" width="343" height="134.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DETAILS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xEg-YF-doo">
+                                        <rect key="frame" x="0.0" y="0.0" width="47.5" height="16.5"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="12"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="this was so amazing" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0ze-nQ-a6V" customClass="CustomTextView" customModule="Location_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="343" height="110"/>
+                                        <color key="backgroundColor" red="0.0039215686269999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="110" id="CHM-Nm-VBL"/>
+                                        </constraints>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.25882352939999997" green="0.25882352939999997" blue="0.25882352939999997" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="0ze-nQ-a6V" secondAttribute="trailing" id="4zH-Ed-ECr"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="bf1-k0-hhL" firstAttribute="top" secondItem="m72-qE-kK2" secondAttribute="bottom" constant="30" id="5QS-Jc-lxy"/>
                             <constraint firstAttribute="trailing" secondItem="LYg-ya-kYP" secondAttribute="trailing" id="9d7-eG-sie"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bf1-k0-hhL" secondAttribute="trailing" id="Jsw-2Q-dsS"/>
                             <constraint firstItem="LYg-ya-kYP" firstAttribute="leading" secondItem="HMR-zE-KEE" secondAttribute="leading" id="LEC-bf-oiq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="m72-qE-kK2" secondAttribute="trailing" id="WoM-2B-jqf"/>
                             <constraint firstItem="m72-qE-kK2" firstAttribute="top" secondItem="LYg-ya-kYP" secondAttribute="bottom" constant="30" id="hZc-JU-ZpO"/>
                             <constraint firstItem="LYg-ya-kYP" firstAttribute="top" secondItem="kDs-7W-51G" secondAttribute="bottom" constant="12" id="lFE-Wk-5bG"/>
                             <constraint firstItem="m72-qE-kK2" firstAttribute="leading" secondItem="HMR-zE-KEE" secondAttribute="leadingMargin" id="njl-YF-fBc"/>
+                            <constraint firstItem="bf1-k0-hhL" firstAttribute="leading" secondItem="HMR-zE-KEE" secondAttribute="leadingMargin" id="rUJ-3P-jDU"/>
                             <constraint firstItem="u97-LN-eRk" firstAttribute="centerX" secondItem="HMR-zE-KEE" secondAttribute="centerX" id="swn-LQ-jE2"/>
                         </constraints>
                     </view>
