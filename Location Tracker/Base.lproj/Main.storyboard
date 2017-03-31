@@ -78,7 +78,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rwx-B2-1sa">
-                                                    <rect key="frame" x="196" y="18" width="105" height="41.5"/>
+                                                    <rect key="frame" x="206" y="18" width="105" height="41.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:00 PM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odf-NF-hle">
                                                             <rect key="frame" x="0.0" y="0.0" width="105" height="22"/>
@@ -141,7 +141,7 @@
                                                 <constraint firstAttribute="bottom" secondItem="brN-dd-70w" secondAttribute="bottom" id="3P6-Gu-RuL"/>
                                                 <constraint firstAttribute="trailing" secondItem="brN-dd-70w" secondAttribute="trailing" id="9p9-4X-d6K"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="TbN-eG-QIR" secondAttribute="trailing" constant="6" id="AX2-v5-Wxj"/>
-                                                <constraint firstItem="TbN-eG-QIR" firstAttribute="leading" secondItem="rwx-B2-1sa" secondAttribute="trailing" constant="30" id="Di1-gB-xHC"/>
+                                                <constraint firstItem="TbN-eG-QIR" firstAttribute="leading" secondItem="rwx-B2-1sa" secondAttribute="trailing" constant="20" id="Di1-gB-xHC"/>
                                                 <constraint firstItem="rwx-B2-1sa" firstAttribute="centerY" secondItem="r3X-a9-MMe" secondAttribute="centerY" id="MTC-S7-FIw"/>
                                                 <constraint firstItem="3vG-uT-dds" firstAttribute="centerY" secondItem="r3X-a9-MMe" secondAttribute="centerY" id="S6O-Mr-8cQ"/>
                                                 <constraint firstItem="brN-dd-70w" firstAttribute="leading" secondItem="r3X-a9-MMe" secondAttribute="leading" id="bRx-el-hz5"/>
