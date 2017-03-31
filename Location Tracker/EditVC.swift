@@ -15,6 +15,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var cityField: CustomTextField!
     @IBOutlet weak var stateField: CustomTextField!
     @IBOutlet weak var zipField: CustomTextField!
+    @IBOutlet weak var detailsTextView: CustomTextView!
     
     
     private var _record: Record!
@@ -41,6 +42,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
         cityField.text = record.city
         stateField.text = record.state
         zipField.text = record.zip
+        detailsTextView.text = record.details
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -86,6 +88,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
         _record.city = cityField.text
         _record.state = stateField.text
         _record.zip = zipField.text
+        _record.details = detailsTextView.text
         
         ad.saveContext()
         
