@@ -514,6 +514,9 @@
                             <constraint firstItem="Reo-sR-ayx" firstAttribute="top" secondItem="756-zz-Dqv" secondAttribute="bottom" id="klh-88-ahD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mapView" destination="756-zz-Dqv" id="U2J-y5-FLv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHy-Cq-jwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
