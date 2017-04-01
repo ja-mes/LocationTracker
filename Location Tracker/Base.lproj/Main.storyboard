@@ -385,7 +385,7 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <segue destination="MaS-bu-UMo" kind="show" id="hho-dq-zva"/>
+                                                    <action selector="viewMapPressed:" destination="dIf-vh-E8a" eventType="touchUpInside" id="oYa-Fb-rIG"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LYg-ya-kYP">
@@ -462,6 +462,7 @@
                         <outlet property="scrollView" destination="gkn-CS-JL2" id="ras-3B-HmJ"/>
                         <outlet property="stateField" destination="3wa-PK-sKJ" id="W34-up-5eB"/>
                         <outlet property="zipField" destination="PzP-cK-L32" id="wG8-Yy-drC"/>
+                        <segue destination="MaS-bu-UMo" kind="show" identifier="MapVC" id="B1b-Oo-dlj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pg-ta-IPN" userLabel="First Responder" sceneMemberID="firstResponder"/>

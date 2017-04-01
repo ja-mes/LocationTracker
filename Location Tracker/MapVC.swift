@@ -13,10 +13,10 @@ class MapVC: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    private var _lat: String!
-    private var _lon: String!
+    private var _lat: String?
+    private var _lon: String?
     
-    var lat: String {
+    var lat: String? {
         get {
             return _lat
         }
@@ -26,7 +26,7 @@ class MapVC: UIViewController {
     }
     
     
-    var lon: String {
+    var lon: String? {
         get {
             return _lon
         }
@@ -38,6 +38,8 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(_lon)
+        print(_lat)
         
     }
 
