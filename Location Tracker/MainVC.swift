@@ -146,8 +146,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         item.city = currentPlacemark?.locality
         item.state = currentPlacemark?.administrativeArea
         item.zip = currentPlacemark?.postalCode
-        item.lat = String(describing: currentLocation?.coordinate.latitude)
-        item.lon = String(describing: currentLocation?.coordinate.longitude)
+        
+        if let lat = currentLocation?.coordinate.latitude, let lon = currentLocation?.coordinate.longitude {
+            item.lat = String(describing: lat)
+            item.lon = String(describing: lon)
+        }
+
         item.date = NSDate()
         
         ad.saveContext()
@@ -201,6 +205,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     func configureCell(cell: RecordCell, indexPath: IndexPath) {
         let record = controller.object(at: indexPath)
+        
+        print(record.lon)
+        print(record.lat)
         
         cell.addressLine1.text = record.address
         cell.addressLine2.text = record.addressLine2
