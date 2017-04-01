@@ -205,10 +205,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     func configureCell(cell: RecordCell, indexPath: IndexPath) {
         let record = controller.object(at: indexPath)
-        
-        print(record.lon)
-        print(record.lat)
-        
+                
         cell.addressLine1.text = record.address
         cell.addressLine2.text = record.addressLine2
         
