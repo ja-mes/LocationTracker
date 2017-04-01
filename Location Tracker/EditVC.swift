@@ -55,10 +55,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapVC" {
             if let destination = segue.destination as? MapVC {
-                if let location = sender as? [String?] {
-                    destination.lon = location[0]
-                    destination.lat = location[1]
-                }
+                destination.record = record
             }
         }
     }
@@ -108,7 +105,6 @@ class EditVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func viewMapPressed(_ sender: UIButton) {
-        let location = [record.lon, record.lat]
-        performSegue(withIdentifier: "MapVC", sender: location)
+        performSegue(withIdentifier: "MapVC", sender: nil)
     }
 }
