@@ -38,6 +38,10 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let region: CLLocationCoordinate2D = CLLocationCoordinate2DMake(34.174192, -86.158139)
+        mapView.setRegion(MKCoordinateRegionMakeWithDistance(region, 2000, 2000), animated: true)
+        
+        
         print(_lon)
         print(_lat)
         
