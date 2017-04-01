@@ -18,6 +18,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     var locationManger: CLLocationManager!
     var controller: NSFetchedResultsController<Record>!
     var currentPlacemark: CLPlacemark?
+    var currentLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,6 +78,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locationManger.location {
+            currentLocation = location
             
             CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
                 if let error = error {
@@ -86,6 +88,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
                 
                 if let pm = placemarks?[0] {
                     self.displayLocation(pm)
+                    
                 }
                 
             }
@@ -143,7 +146,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         item.city = currentPlacemark?.locality
         item.state = currentPlacemark?.administrativeArea
         item.zip = currentPlacemark?.postalCode
-        
+        item.lat = String(describing: currentLocation?.coordinate.latitude)
+        item.lon = String(describing: currentLocation?.coordinate.longitude)
         item.date = NSDate()
         
         ad.saveContext()
@@ -212,4 +216,5 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         }
         
     }
+
 }
