@@ -13,10 +13,21 @@ class MapVC: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
+    private var _location: CLLocation!
+    
+    var location: CLLocation {
+        get {
+            return _location
+        }
+        set {
+            _location = newValue
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
+        
     }
 
     @IBAction func backButtonPressed(_ sender: Any) {
