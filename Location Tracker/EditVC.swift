@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class EditVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
 
@@ -49,6 +50,17 @@ class EditVC: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MapVC" {
+            if let destination = segue.destination as? MapVC {
+                if let location = sender as? [String] {
+                    destination.lon = location[0]
+                    destination.lat = location[1]
+                }
+            }
+        }
     }
     
     // MARK: Keyboard

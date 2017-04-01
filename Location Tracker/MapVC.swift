@@ -13,14 +13,25 @@ class MapVC: UIViewController {
 
     @IBOutlet weak var mapView: MKMapView!
     
-    private var _location: CLLocation!
+    private var _lat: String!
+    private var _lon: String!
     
-    var location: CLLocation {
+    var lat: String {
         get {
-            return _location
+            return _lat
         }
         set {
-            _location = newValue
+            _lat = newValue
+        }
+    }
+    
+    
+    var lon: String {
+        get {
+            return _lon
+        }
+        set {
+            _lon = newValue
         }
     }
     
