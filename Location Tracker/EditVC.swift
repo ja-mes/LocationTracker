@@ -104,7 +104,4 @@ class EditVC: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func viewMapPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "MapVC", sender: nil)
-    }
 }
