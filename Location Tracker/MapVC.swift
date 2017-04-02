@@ -27,17 +27,32 @@ class MapVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let record = record, let lon = record.lon, let lat = record.lat {
-            if let lon = Double(lon), let lat = Double(lat) {
-                let region: CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat, lon)
-                mapView.setRegion(MKCoordinateRegionMakeWithDistance(region, 2000, 2000), animated: true)
+        if  let address = record?.address,
+            let city = record?.city,
+            let state = record?.state,
+            let zip = record?.zip
+        {
+        
+            let addressString = "\(address), \(city), \(state) \(zip)"
+            
+            let geocoder = CLGeocoder()
+            
+            geocoder.geocodeAddressString(addressString, completionHandler: { (placemarks, error) in
+                if let error = error {
+                    print("Error geocoding address: " + error.localizedDescription)
+                }
                 
-                let pin = CustomAnnotation(title: record.address ?? "", subtitle: "", coordinate: region)
-                mapView.addAnnotation(pin)    
-            }
+                if let placemark = placemarks?.first {
+                    self.mapView.addAnnotation(MKPlacemark(placemark: placemark))
+                    
+                    if let coords = placemark.location?.coordinate {
+                        self.mapView.setRegion(MKCoordinateRegionMakeWithDistance(coords, 2000, 2000), animated: true)
+                    }
+                }
+            })
         }
     }
-
+    
     @IBAction func backButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
