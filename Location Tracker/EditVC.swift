@@ -12,6 +12,7 @@ import UIKit
 class EditVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
 
+    @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var addressField: CustomTextField!
     @IBOutlet weak var cityField: CustomTextField!
     @IBOutlet weak var stateField: CustomTextField!

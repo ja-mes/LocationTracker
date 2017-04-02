@@ -531,6 +531,7 @@
                         <outlet property="detailsTextView" destination="0ze-nQ-a6V" id="3pt-qI-IYQ"/>
                         <outlet property="scrollView" destination="gkn-CS-JL2" id="ras-3B-HmJ"/>
                         <outlet property="stateField" destination="3wa-PK-sKJ" id="W34-up-5eB"/>
+                        <outlet property="titleLbl" destination="u97-LN-eRk" id="awe-ZO-o6s"/>
                         <outlet property="zipField" destination="PzP-cK-L32" id="wG8-Yy-drC"/>
                     </connections>
                 </viewController>
