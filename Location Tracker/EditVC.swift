@@ -21,10 +21,11 @@ class EditVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var dateField: CustomTextField!
     
     
-    private var _record: Record!
+    private var _record: Record?
     var datePicker: UIDatePicker!
     
-    var record: Record {
+    var record: Record?
+    {
         get {
             return _record
         }
@@ -35,6 +36,10 @@ class EditVC: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if _record != nil {
+            titleLbl.text = "NEW ENTRY"
+        }
         
         datePicker = UIDatePicker()
         datePicker.datePickerMode = .dateAndTime
@@ -50,13 +55,13 @@ class EditVC: UIViewController, UITextFieldDelegate {
         dateField.delegate = self
         
 
-        addressField.text = record.address
-        cityField.text = record.city
-        stateField.text = record.state
-        zipField.text = record.zip
-        detailsTextView.text = record.details
+        addressField.text = record?.address
+        cityField.text = record?.city
+        stateField.text = record?.state
+        zipField.text = record?.zip
+        detailsTextView.text = record?.details
         
-        if let date = record.date {
+        if let date = record?.date {
             displayDate(date: date as Date)
         }
         
@@ -119,12 +124,12 @@ class EditVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        _record.address = addressField.text
-        _record.city = cityField.text
-        _record.state = stateField.text
-        _record.zip = zipField.text
-        _record.details = detailsTextView.text
-        _record.date = datePicker.date as NSDate
+        _record?.address = addressField.text
+        _record?.city = cityField.text
+        _record?.state = stateField.text
+        _record?.zip = zipField.text
+        _record?.details = detailsTextView.text
+        _record?.date = datePicker.date as NSDate
         
         ad.saveContext()
         
@@ -139,8 +144,11 @@ class EditVC: UIViewController, UITextFieldDelegate {
         alertController.popoverPresentationController?.permittedArrowDirections = .up
         
         let deleteAction = UIAlertAction(title: "Delete Entry", style: .destructive, handler: { (action) in
-            context.delete(self.record)
-            ad.saveContext()
+            if let record = self.record {
+                context.delete(record)
+                ad.saveContext()
+            }
+
             self.dismiss(animated: true, completion: nil)
         })
         alertController.addAction(deleteAction)
