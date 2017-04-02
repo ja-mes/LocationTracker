@@ -189,11 +189,11 @@
                         <viewControllerLayoutGuide type="bottom" id="Xf5-zQ-7Xm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HMR-zE-KEE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gkn-CS-JL2">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rsF-6k-Zb7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
@@ -431,10 +431,10 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mjB-Ra-8zD">
-                                                <rect key="frame" x="16" y="640" width="290" height="25"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mjB-Ra-8zD">
+                                                <rect key="frame" x="16" y="608.5" width="290" height="25"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Ai-naw" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Ai-naw" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="135" height="25"/>
                                                         <color key="backgroundColor" red="0.99884438509999995" green="0.24269126360000001" blue="0.3373038471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
@@ -454,7 +454,7 @@
                                                             <segue destination="MaS-bu-UMo" kind="show" identifier="MapVC" id="QAO-CV-yYK"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xx-7j-Gvo" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xx-7j-Gvo" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
                                                         <rect key="frame" x="155" y="0.0" width="135" height="25"/>
                                                         <color key="backgroundColor" red="0.9987335205078125" green="0.60072541236877441" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
@@ -482,6 +482,7 @@
                                             <constraint firstItem="LYg-ya-kYP" firstAttribute="leading" secondItem="rsF-6k-Zb7" secondAttribute="leading" id="24l-qT-eLb"/>
                                             <constraint firstItem="LYg-ya-kYP" firstAttribute="leading" secondItem="rsF-6k-Zb7" secondAttribute="leading" id="7Xa-19-X9x"/>
                                             <constraint firstAttribute="trailing" secondItem="LYg-ya-kYP" secondAttribute="trailing" id="BDp-Sl-2qf"/>
+                                            <constraint firstItem="mjB-Ra-8zD" firstAttribute="top" secondItem="m72-qE-kK2" secondAttribute="bottom" constant="40" id="DYa-h7-Q1B"/>
                                             <constraint firstItem="m72-qE-kK2" firstAttribute="top" secondItem="LYg-ya-kYP" secondAttribute="bottom" constant="30" id="S8O-tX-GF2"/>
                                             <constraint firstItem="LYg-ya-kYP" firstAttribute="top" secondItem="rsF-6k-Zb7" secondAttribute="top" constant="33" id="Wsb-4F-wmz"/>
                                             <constraint firstItem="mjB-Ra-8zD" firstAttribute="leading" secondItem="rsF-6k-Zb7" secondAttribute="leading" constant="16" id="ZyU-JD-slv"/>
@@ -509,8 +510,6 @@
                             <constraint firstItem="Xf5-zQ-7Xm" firstAttribute="top" secondItem="gkn-CS-JL2" secondAttribute="bottom" id="vPD-cD-ryA"/>
                         </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="700"/>
                     <connections>
                         <outlet property="addressField" destination="JLQ-JY-L6k" id="XvE-5H-t49"/>
                         <outlet property="cityField" destination="Axj-EZ-woJ" id="Q2a-rs-nQa"/>
@@ -533,7 +532,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Reo-sR-ayx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3yR-7w-XGl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp3-3U-3hi" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
@@ -557,7 +556,7 @@
                                 </connections>
                             </button>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="756-zz-Dqv">
-                                <rect key="frame" x="0.0" y="82" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="82" width="375" height="585"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686269999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
