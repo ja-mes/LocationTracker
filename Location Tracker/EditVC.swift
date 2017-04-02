@@ -105,6 +105,13 @@ class EditVC: UIViewController, UITextFieldDelegate {
     }
 
     
+    @IBAction func dateEditingBegan(_ sender: Any) {
+        
+    }
+    
+    @IBAction func dateEditingEnded(_ sender: Any) {
+    }
+    
     @IBAction func cancelButtonPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
