@@ -18,7 +18,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     var locationManger: CLLocationManager!
     var controller: NSFetchedResultsController<Record>!
     var currentPlacemark: CLPlacemark?
-    var currentLocation: CLLocation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -78,8 +77,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         if let location = locationManger.location {
-            currentLocation = location
-            
             CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
                 if let error = error {
                     print("Reverse geocode failed with error" + error.localizedDescription)
@@ -146,12 +143,6 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         item.city = currentPlacemark?.locality
         item.state = currentPlacemark?.administrativeArea
         item.zip = currentPlacemark?.postalCode
-        
-        if let lat = currentLocation?.coordinate.latitude, let lon = currentLocation?.coordinate.longitude {
-            item.lat = String(describing: lat)
-            item.lon = String(describing: lon)
-        }
-
         item.date = NSDate()
         
         ad.saveContext()
