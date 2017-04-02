@@ -115,6 +115,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
         _record.state = stateField.text
         _record.zip = zipField.text
         _record.details = detailsTextView.text
+        _record.date = datePicker.date as NSDate
         
         ad.saveContext()
         
