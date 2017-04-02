@@ -63,6 +63,8 @@ class EditVC: UIViewController, UITextFieldDelegate {
         
         if let date = record?.date {
             displayDate(date: date as Date)
+        } else {
+            displayDate(date: Date())
         }
         
         
@@ -124,12 +126,21 @@ class EditVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        _record?.address = addressField.text
-        _record?.city = cityField.text
-        _record?.state = stateField.text
-        _record?.zip = zipField.text
-        _record?.details = detailsTextView.text
-        _record?.date = datePicker.date as NSDate
+        let item: Record!
+        
+        if let record = _record {
+            item = record
+        } else {
+            item = Record(context: context)
+        }
+        
+        item.address = addressField.text
+        item.city = cityField.text
+        item.state = stateField.text
+        item.zip = zipField.text
+        item.details = detailsTextView.text
+        item.date = datePicker.date as NSDate
+
         
         ad.saveContext()
         
