@@ -106,10 +106,11 @@ class EditVC: UIViewController, UITextFieldDelegate {
 
     
     @IBAction func dateEditingBegan(_ sender: Any) {
-        
+        dateField.font = UIFont(name: "AvenirNext-Bold", size: 14.0)
     }
     
     @IBAction func dateEditingEnded(_ sender: Any) {
+        dateField.font = UIFont(name: "AvenirNext-Regular", size: 14.0)
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
