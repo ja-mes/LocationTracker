@@ -255,7 +255,7 @@
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="100 foo bar ave" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLQ-JY-L6k" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JLQ-JY-L6k" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="24.5" width="343" height="40"/>
                                                                 <color key="backgroundColor" red="0.12561112639999999" green="0.12560792270000001" blue="0.1256100684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
@@ -287,7 +287,7 @@
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Boaz" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axj-EZ-woJ" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Axj-EZ-woJ" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="24.5" width="343" height="40"/>
                                                                 <color key="backgroundColor" red="0.12561112639999999" green="0.12560792270000001" blue="0.1256100684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
@@ -322,7 +322,7 @@
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Alabama" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-PK-sKJ" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3wa-PK-sKJ" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="24.5" width="161.5" height="40"/>
                                                                         <color key="backgroundColor" red="0.12561112639999999" green="0.12560792270000001" blue="0.1256100684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
@@ -357,7 +357,7 @@
                                                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="35950" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-cK-L32" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
+                                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PzP-cK-L32" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="24.5" width="161.5" height="40"/>
                                                                         <color key="backgroundColor" red="0.12561112639999999" green="0.12560792270000001" blue="0.1256100684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                         <constraints>
@@ -394,7 +394,7 @@
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="January 23, 2017" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3y-dl-VhM" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="G3y-dl-VhM" customClass="CustomTextField" customModule="Location_Tracker" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="24.5" width="343" height="40"/>
                                                                 <color key="backgroundColor" red="0.12561112639999999" green="0.12560792270000001" blue="0.1256100684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <constraints>
