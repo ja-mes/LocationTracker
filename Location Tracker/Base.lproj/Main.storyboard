@@ -272,6 +272,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="dIf-vh-E8a" id="gbi-0W-CES"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -301,6 +304,9 @@
                                                                         <real key="value" value="10"/>
                                                                     </userDefinedRuntimeAttribute>
                                                                 </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <outlet property="delegate" destination="dIf-vh-E8a" id="8Lw-xW-eA8"/>
+                                                                </connections>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -333,6 +339,9 @@
                                                                                 <real key="value" value="10"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="dIf-vh-E8a" id="rE0-wc-Oh5"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                                 <constraints>
@@ -365,6 +374,9 @@
                                                                                 <real key="value" value="10"/>
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <outlet property="delegate" destination="dIf-vh-E8a" id="cbq-NH-653"/>
+                                                                        </connections>
                                                                     </textField>
                                                                 </subviews>
                                                                 <constraints>
@@ -402,6 +414,7 @@
                                                                 <connections>
                                                                     <action selector="dateEditingBegan:" destination="dIf-vh-E8a" eventType="editingDidBegin" id="pqg-1F-GKs"/>
                                                                     <action selector="dateEditingEnded:" destination="dIf-vh-E8a" eventType="editingDidEnd" id="Yq7-Kz-5fn"/>
+                                                                    <outlet property="delegate" destination="dIf-vh-E8a" id="3aU-4e-3zq"/>
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
@@ -531,6 +544,7 @@
                         <outlet property="addressField" destination="JLQ-JY-L6k" id="XvE-5H-t49"/>
                         <outlet property="cityField" destination="Axj-EZ-woJ" id="Q2a-rs-nQa"/>
                         <outlet property="dateField" destination="G3y-dl-VhM" id="Ugp-tg-cHa"/>
+                        <outlet property="deleteButton" destination="4xx-7j-Gvo" id="pm8-ba-RrZ"/>
                         <outlet property="detailsTextView" destination="0ze-nQ-a6V" id="3pt-qI-IYQ"/>
                         <outlet property="scrollView" destination="gkn-CS-JL2" id="ras-3B-HmJ"/>
                         <outlet property="stateField" destination="3wa-PK-sKJ" id="W34-up-5eB"/>

@@ -19,6 +19,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var zipField: CustomTextField!
     @IBOutlet weak var detailsTextView: CustomTextView!
     @IBOutlet weak var dateField: CustomTextField!
+    @IBOutlet weak var deleteButton: CustomButton!
     
     
     private var _record: Record?
@@ -37,34 +38,23 @@ class EditVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if _record == nil {
-            titleLbl.text = "NEW ENTRY"
-        }
-        
         datePicker = UIDatePicker()
         datePicker.datePickerMode = .dateAndTime
         dateField.inputView = datePicker
         dateField.tintColor = UIColor.clear
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
         
-        
-        addressField.delegate = self
-        cityField.delegate = self
-        stateField.delegate = self
-        zipField.delegate = self
-        dateField.delegate = self
-        
-
-        addressField.text = record?.address
-        cityField.text = record?.city
-        stateField.text = record?.state
-        zipField.text = record?.zip
-        detailsTextView.text = record?.details
-        
-        if let date = record?.date {
-            displayDate(date: date as Date)
-        } else {
+        if let record = _record {
+            addressField.text = record.address
+            cityField.text = record.city
+            stateField.text = record.state
+            zipField.text = record.zip
+            detailsTextView.text = record.details
+            displayDate(date: record.date as Date?)
+        }
+        else {
             displayDate(date: Date())
+            titleLbl.text = "NEW ENTRY"
         }
         
         
@@ -176,11 +166,14 @@ class EditVC: UIViewController, UITextFieldDelegate {
         displayDate(date: sender.date)
     }
     
-    func displayDate(date: Date) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .long
-        dateFormatter.timeStyle = .short
-        
-        dateField.text = dateFormatter.string(from: date)
+    func displayDate(date: Date?) {
+        if let date = date {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .long
+            dateFormatter.timeStyle = .short
+            
+            dateField.text = dateFormatter.string(from: date)
+
+        }
     }
 }
