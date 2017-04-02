@@ -105,9 +105,22 @@ class EditVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func deleteButtonPressed(_ sender: UIButton) {
-        context.delete(record)
-        ad.saveContext()
+        let alertController = UIAlertController(title: "", message: "Are you sure you want to delete this entry?", preferredStyle: .actionSheet)
         
-        dismiss(animated: true, completion: nil)
+        alertController.popoverPresentationController?.sourceView = sender
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: 0, y: sender.frame.height, width: 0, height: 0)
+        alertController.popoverPresentationController?.permittedArrowDirections = .up
+        
+        let deleteAction = UIAlertAction(title: "Delete Entry", style: .destructive, handler: { (action) in
+            context.delete(self.record)
+            ad.saveContext()
+            self.dismiss(animated: true, completion: nil)
+        })
+        alertController.addAction(deleteAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
