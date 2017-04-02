@@ -22,6 +22,5 @@ import UIKit
             leftViewMode = UITextFieldViewMode.always
         }
     }
-
   
 }

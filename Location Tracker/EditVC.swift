@@ -40,7 +40,6 @@ class EditVC: UIViewController, UITextFieldDelegate {
         dateField.inputView = datePicker
         dateField.tintColor = UIColor.clear
         datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
-
         
         
         addressField.delegate = self
@@ -55,6 +54,11 @@ class EditVC: UIViewController, UITextFieldDelegate {
         stateField.text = record.state
         zipField.text = record.zip
         detailsTextView.text = record.details
+        
+        if let date = record.date {
+            displayDate(date: date as Date)
+        }
+        
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tap)
@@ -93,6 +97,8 @@ class EditVC: UIViewController, UITextFieldDelegate {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         self.scrollView.contentInset = contentInset
     }
+    
+
     
     func dismissKeyboard() {
         view.endEditing(true)
