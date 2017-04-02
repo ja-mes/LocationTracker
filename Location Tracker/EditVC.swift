@@ -37,7 +37,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if _record != nil {
+        if _record == nil {
             titleLbl.text = "NEW ENTRY"
         }
         

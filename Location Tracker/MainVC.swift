@@ -164,6 +164,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         }
     }
     
+    @IBAction func addButtonPressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "EditVC", sender: nil)
+    }
+    
     // FUNCS
     func displayLocation(_ placemark: CLPlacemark) {
         
@@ -205,7 +209,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
     
     func configureCell(cell: RecordCell, indexPath: IndexPath) {
         let record = controller.object(at: indexPath)
-                
+        
         cell.addressLine1.text = record.address
         cell.addressLine2.text = record.addressLine2
         
