@@ -104,4 +104,10 @@ class EditVC: UIViewController, UITextFieldDelegate {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func deleteButtonPressed(_ sender: UIButton) {
+        context.delete(record)
+        ad.saveContext()
+        
+        dismiss(animated: true, completion: nil)
+    }
 }
