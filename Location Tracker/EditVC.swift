@@ -17,9 +17,11 @@ class EditVC: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var stateField: CustomTextField!
     @IBOutlet weak var zipField: CustomTextField!
     @IBOutlet weak var detailsTextView: CustomTextView!
+    @IBOutlet weak var dateField: CustomTextField!
     
     
     private var _record: Record!
+    var datePicker: UIDatePicker!
     
     var record: Record {
         get {
@@ -33,10 +35,19 @@ class EditVC: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        datePicker = UIDatePicker()
+        datePicker.datePickerMode = .dateAndTime
+        dateField.inputView = datePicker
+        dateField.tintColor = UIColor.clear
+        datePicker.addTarget(self, action: #selector(handleDatePicker(sender:)), for: .valueChanged)
+
+        
+        
         addressField.delegate = self
         cityField.delegate = self
         stateField.delegate = self
         zipField.delegate = self
+        dateField.delegate = self
         
 
         addressField.text = record.address
@@ -122,5 +133,19 @@ class EditVC: UIViewController, UITextFieldDelegate {
         alertController.addAction(cancelAction)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    
+    // MARK: func
+    func handleDatePicker(sender: UIDatePicker) {
+        displayDate(date: sender.date)
+    }
+    
+    func displayDate(date: Date) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .long
+        dateFormatter.timeStyle = .short
+        
+        dateField.text = dateFormatter.string(from: date)
     }
 }

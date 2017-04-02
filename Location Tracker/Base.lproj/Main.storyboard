@@ -513,6 +513,7 @@
                     <connections>
                         <outlet property="addressField" destination="JLQ-JY-L6k" id="XvE-5H-t49"/>
                         <outlet property="cityField" destination="Axj-EZ-woJ" id="Q2a-rs-nQa"/>
+                        <outlet property="dateField" destination="G3y-dl-VhM" id="Ugp-tg-cHa"/>
                         <outlet property="detailsTextView" destination="0ze-nQ-a6V" id="3pt-qI-IYQ"/>
                         <outlet property="scrollView" destination="gkn-CS-JL2" id="ras-3B-HmJ"/>
                         <outlet property="stateField" destination="3wa-PK-sKJ" id="W34-up-5eB"/>
