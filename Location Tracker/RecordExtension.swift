@@ -15,6 +15,8 @@ extension Record {
             if let city = city, let state = state, let zip = zip {
                 if city.isEmpty && state.isEmpty && zip.isEmpty {
                     return nil
+                } else if !city.isEmpty && state.isEmpty && zip.isEmpty {
+                    return city
                 }
                 
                 return "\(city), \(state) \(zip)"
