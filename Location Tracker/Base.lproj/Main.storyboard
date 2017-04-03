@@ -481,7 +481,7 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
-                                                            <segue destination="MaS-bu-UMo" kind="show" identifier="MapVC" id="QAO-CV-yYK"/>
+                                                            <action selector="viewMapPressed:" destination="dIf-vh-E8a" eventType="touchUpInside" id="rmL-rP-5ai"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xx-7j-Gvo" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
@@ -550,6 +550,7 @@
                         <outlet property="stateField" destination="3wa-PK-sKJ" id="W34-up-5eB"/>
                         <outlet property="titleLbl" destination="u97-LN-eRk" id="awe-ZO-o6s"/>
                         <outlet property="zipField" destination="PzP-cK-L32" id="wG8-Yy-drC"/>
+                        <segue destination="MaS-bu-UMo" kind="show" identifier="MapVC" id="RQv-69-LNj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pg-ta-IPN" userLabel="First Responder" sceneMemberID="firstResponder"/>

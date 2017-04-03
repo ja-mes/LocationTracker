@@ -69,6 +69,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapVC" {
             if let destination = segue.destination as? MapVC {
+                
                 destination.record = record
             }
         }
@@ -117,24 +118,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func saveButtonPressed(_ sender: UIButton) {
-        let item: Record!
-        
-        if let record = _record {
-            item = record
-        } else {
-            item = Record(context: context)
-        }
-        
-        item.address = addressField.text
-        item.city = cityField.text
-        item.state = stateField.text
-        item.zip = zipField.text
-        item.details = detailsTextView.text
-        item.date = datePicker.date as NSDate
-
-        
-        ad.saveContext()
-        
+        save()
         dismiss(animated: true, completion: nil)
     }
     
@@ -161,8 +145,34 @@ class EditVC: UIViewController, UITextFieldDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func viewMapPressed(_ sender: CustomButton) {
+        save()
+        performSegue(withIdentifier: "MapVC", sender: nil)
+    }
     
     // MARK: func
+    func save() {
+        let item: Record!
+        
+        if let record = _record {
+            item = record
+        } else {
+            item = Record(context: context)
+        }
+        
+        item.address = addressField.text
+        item.city = cityField.text
+        item.state = stateField.text
+        item.zip = zipField.text
+        item.details = detailsTextView.text
+        item.date = datePicker.date as NSDate
+        
+        // Allows newly saved records to be passed to map
+        record = item
+        ad.saveContext()
+    }
+    
+    
     func handleDatePicker(sender: UIDatePicker) {
         displayDate(date: sender.date)
     }
