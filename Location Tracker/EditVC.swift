@@ -174,6 +174,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
             
             dateField.text = dateFormatter.string(from: date)
 
+            datePicker.setDate(date, animated: true)
         }
     }
 }
