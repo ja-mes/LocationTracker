@@ -14,7 +14,9 @@ extension Record {
         get {
             if var city = city, let state = state, let zip = zip {
                 
-                if !city.isEmpty && (zip.isEmpty && state.isEmpty) {
+                if city.isEmpty && zip.isEmpty && state.isEmpty {
+                    return nil
+                }else if !city.isEmpty && (zip.isEmpty && state.isEmpty) {
                     return city
                 }
                 
