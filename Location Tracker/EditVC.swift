@@ -55,6 +55,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
         else {
             displayDate(date: Date())
             titleLbl.text = "NEW ENTRY"
+            deleteButton.isHidden = true
         }
         
         
