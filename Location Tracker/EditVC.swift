@@ -69,7 +69,12 @@ class EditVC: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MapVC" {
             if let destination = segue.destination as? MapVC {
-                
+                destination.record = record
+            }
+        }
+        
+        if segue.identifier == "PhotoVC" {
+            if let destination = segue.destination as? PhotoVC {
                 destination.record = record
             }
         }

@@ -11,6 +11,17 @@ import UIKit
 class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    private var _record: Record?
+    
+    var record: Record? {
+        get {
+            return _record
+        }
+        set {
+            _record = newValue
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

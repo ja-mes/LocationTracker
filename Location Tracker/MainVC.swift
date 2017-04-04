@@ -145,6 +145,12 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         item.zip = currentPlacemark?.postalCode
         item.date = NSDate()
         
+        if let imageData = UIImageJPEGRepresentation(#imageLiteral(resourceName: "send icon"), 1) {
+            let photo = Photo(context: context)
+            photo.image = imageData as NSData
+            item.addToPhotos(photo)
+        }
+        
         ad.saveContext()
     }
     
