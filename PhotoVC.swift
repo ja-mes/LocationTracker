@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import CoreData
 
-class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSFetchedResultsControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var controller: NSFetchedResultsController<Photo>!
     var imagePicker: UIImagePickerController!
     var photos: [Photo]?
     
@@ -40,6 +42,8 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         imagePicker = UIImagePickerController()
         imagePicker.delegate = self
+        
+        fetchPhotos()
     
     }
     
@@ -52,20 +56,24 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
  
     func numberOfSections(in collectionView: UICollectionView) -> Int {
+        if let sections = controller.sections {
+            return sections.count
+        }
+        
         return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return photos?.count ?? 0
+        if let sections = controller.sections {
+            return sections[section].numberOfObjects
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell {
-            if let photos = photos, let data = photos[indexPath.row].image {
-                
-                cell.imageView.image = UIImage(data: data as Data)
-
-            }
+            configureCell(cell: cell, indexPath: indexPath)
             
             return cell
             
@@ -73,5 +81,57 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         return UICollectionViewCell()
         
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+        }
+    }
+    
+    
+    // MARK: FRC
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case.insert:
+            if let indexPath = newIndexPath {
+                collectionView.insertItems(at: [indexPath])
+            }
+            break
+        case.delete:
+            if let indexPath = indexPath {
+                collectionView.deleteItems(at: [indexPath])
+            }
+            break
+        case.update:
+            if let indexPath = indexPath {
+                if let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell {
+                    configureCell(cell: cell, indexPath: indexPath)
+                }
+            }
+            break
+        case.move:
+            if let indexPath = indexPath {
+                collectionView.deleteItems(at: [indexPath])
+            }
+            if let indexPath = newIndexPath {
+                collectionView.insertItems(at: [indexPath])
+            }
+            break
+        }
+    }
+
+    
+    func fetchPhotos() {
+        let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
+        
+    }
+    
+    func configureCell(cell: PhotoCell, indexPath: IndexPath) {
+//        if let photos = photos, let data = photos[indexPath.row].image {
+//            
+//            cell.imageView.image = UIImage(data: data as Data)
+//            
+//        }
     }
 }
