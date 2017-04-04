@@ -125,13 +125,32 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     func fetchPhotos() {
         let fetchRequest: NSFetchRequest<Photo> = Photo.fetchRequest()
         
+        let dateSort = NSSortDescriptor(key: "date", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
+        
+        if let record = record {
+            fetchRequest.predicate = NSPredicate(format: "record == %@", record)
+        }
+        
+        
+        let newController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
+        self.controller = newController
+        
+        controller.delegate = self
+        
+        do {
+            try controller.performFetch()
+        } catch {
+            let error = error as NSError
+            print(error.localizedDescription)
+        }
     }
     
     func configureCell(cell: PhotoCell, indexPath: IndexPath) {
-//        if let photos = photos, let data = photos[indexPath.row].image {
-//            
-//            cell.imageView.image = UIImage(data: data as Data)
-//            
-//        }
+        let photo = controller.object(at: indexPath)
+
+        if let image = photo.image {
+            cell.imageView.image = UIImage(data: image as Data)
+        }
     }
 }
