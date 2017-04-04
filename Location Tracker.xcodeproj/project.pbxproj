@@ -384,7 +384,7 @@
 				9B2452FB1E93E5480009303C /* Location_Tracker v2.xcdatamodel */,
 				9BFB1D551E8B38090081900C /* Location_Tracker.xcdatamodel */,
 			);
-			currentVersion = 9BFB1D551E8B38090081900C /* Location_Tracker.xcdatamodel */;
+			currentVersion = 9B2452FB1E93E5480009303C /* Location_Tracker v2.xcdatamodel */;
 			path = Location_Tracker.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
