@@ -461,14 +461,32 @@
                                                     </button>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mjB-Ra-8zD">
-                                                <rect key="frame" x="16" y="608.5" width="290" height="25"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mjB-Ra-8zD">
+                                                <rect key="frame" x="16" y="608.5" width="343" height="25"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Ai-naw" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="135" height="25"/>
-                                                        <color key="backgroundColor" red="0.99884438509999995" green="0.24269126360000001" blue="0.3373038471" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REE-mC-lMg" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="101" height="25"/>
+                                                        <color key="backgroundColor" red="0.61205059289932251" green="0.1226227879524231" blue="0.69027602672576904" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="135" id="10v-QC-Bbh"/>
+                                                            <constraint firstAttribute="height" constant="25" id="scx-C8-du5"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                        <state key="normal" title="PICTURES">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="rounded">
+                                                                <real key="value" value="2"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <segue destination="KV7-u4-UNq" kind="show" id="uvt-LN-F0V"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Ai-naw" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
+                                                        <rect key="frame" x="121" y="0.0" width="101" height="25"/>
+                                                        <color key="backgroundColor" red="0.9987335205078125" green="0.60072541236877441" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="37K-OY-XcA"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
@@ -485,11 +503,10 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xx-7j-Gvo" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
-                                                        <rect key="frame" x="155" y="0.0" width="135" height="25"/>
-                                                        <color key="backgroundColor" red="0.9987335205078125" green="0.60072541236877441" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <rect key="frame" x="242" y="0.0" width="101" height="25"/>
+                                                        <color key="backgroundColor" red="0.99884438514709473" green="0.24269126355648041" blue="0.33730384707450867" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="25" id="pxc-l9-Xvf"/>
-                                                            <constraint firstAttribute="width" constant="135" id="uXR-pw-icm"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                         <state key="normal" title="DELETE">
@@ -519,6 +536,7 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="m72-qE-kK2" secondAttribute="trailing" constant="8" id="f7b-1G-cZk"/>
                                             <constraint firstItem="m72-qE-kK2" firstAttribute="leading" secondItem="rsF-6k-Zb7" secondAttribute="leadingMargin" constant="8" id="ktC-8W-PcR"/>
                                             <constraint firstAttribute="trailing" secondItem="LYg-ya-kYP" secondAttribute="trailing" id="nE9-nO-NPF"/>
+                                            <constraint firstAttribute="trailing" secondItem="mjB-Ra-8zD" secondAttribute="trailing" constant="16" id="vfu-85-QMU"/>
                                             <constraint firstAttribute="height" constant="700" id="w0c-zf-f8u"/>
                                         </constraints>
                                     </view>
@@ -609,7 +627,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WHy-Cq-jwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1973.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="2009" y="-227"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="inJ-rT-f3h">
+            <objects>
+                <viewController id="KV7-u4-UNq" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Fb-97-80Z"/>
+                        <viewControllerLayoutGuide type="bottom" id="0nh-2e-gV3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ezw-NK-mVU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l9L-St-HzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2009" y="544"/>
         </scene>
     </scenes>
     <resources>
