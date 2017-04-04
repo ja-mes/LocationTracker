@@ -85,8 +85,16 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
+            if let imageData = UIImageJPEGRepresentation(pickedImage, 1) {
+                let photo = Photo(context: context)
+                photo.image = imageData as NSData
+                record?.addToPhotos(photo)
+            }
+        } else {
+            print("Failure to grab image")
         }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
     
