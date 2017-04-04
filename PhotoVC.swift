@@ -8,10 +8,11 @@
 
 import UIKit
 
-class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
+    var imagePicker: UIImagePickerController!
     var photos: [Photo]?
     
     private var _record: Record?
@@ -37,11 +38,17 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             }
         }
         
-
+        imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+    
     }
     
-    @IBAction func cancelButtonPressed(_ sender: UIButton) {
+    @IBAction func doneButtonPressed(_ sender: UIButton) {
         dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func newButtonPressed(_ sender: UIButton) {
+        present(imagePicker, animated: true, completion: nil)
     }
  
     func numberOfSections(in collectionView: UICollectionView) -> Int {

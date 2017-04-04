@@ -661,7 +661,7 @@
                                             <color key="titleColor" red="0.93617749210000001" green="0.32650941610000001" blue="0.3137699068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
                                         <connections>
-                                            <action selector="cancelButtonPressed:" destination="KV7-u4-UNq" eventType="touchUpInside" id="n3a-gc-KKC"/>
+                                            <action selector="doneButtonPressed:" destination="KV7-u4-UNq" eventType="touchUpInside" id="0Rf-BI-gSq"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHOTOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RO0-cb-Vxv">
@@ -677,6 +677,9 @@
                                         <state key="normal" title="NEW">
                                             <color key="titleColor" red="0.93617749210000001" green="0.32650941610000001" blue="0.3137699068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="newButtonPressed:" destination="KV7-u4-UNq" eventType="touchUpInside" id="yZ7-In-9xi"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
