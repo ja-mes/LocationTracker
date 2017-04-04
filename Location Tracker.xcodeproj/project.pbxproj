@@ -30,6 +30,7 @@
 		9B1646D31E8D7F0E0026B0B9 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9B1646D51E8D81A10026B0B9 /* MapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapVC.swift; sourceTree = "<group>"; };
 		9B1646D71E8DA6FE0026B0B9 /* RecordExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordExtension.swift; sourceTree = "<group>"; };
+		9B2452FB1E93E5480009303C /* Location_Tracker v2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Location_Tracker v2.xcdatamodel"; sourceTree = "<group>"; };
 		9BFB1D4A1E8B38090081900C /* Location Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Location Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BFB1D4D1E8B38090081900C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BFB1D521E8B38090081900C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -380,6 +381,7 @@
 		9BFB1D541E8B38090081900C /* Location_Tracker.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				9B2452FB1E93E5480009303C /* Location_Tracker v2.xcdatamodel */,
 				9BFB1D551E8B38090081900C /* Location_Tracker.xcdatamodel */,
 			);
 			currentVersion = 9BFB1D551E8B38090081900C /* Location_Tracker.xcdatamodel */;
