@@ -53,11 +53,18 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath)
+        if let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PhotoCell", for: indexPath) as? PhotoCell {
+            if let photos = photos, let data = photos[indexPath.row].image {
+                
+                cell.imageView.image = UIImage(data: data as Data)
+
+            }
+            
+            return cell
+            
+        }
         
-        print(photos?[indexPath.row] ?? "No photo")
-        
-        return cell
+        return UICollectionViewCell()
         
     }
 }
