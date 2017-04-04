@@ -629,10 +629,10 @@
             </objects>
             <point key="canvasLocation" x="2009" y="-227"/>
         </scene>
-        <!--View Controller-->
+        <!--PhotoVC-->
         <scene sceneID="inJ-rT-f3h">
             <objects>
-                <viewController id="KV7-u4-UNq" sceneMemberID="viewController">
+                <viewController id="KV7-u4-UNq" customClass="PhotoVC" customModule="Location_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Fb-97-80Z"/>
                         <viewControllerLayoutGuide type="bottom" id="0nh-2e-gV3"/>
@@ -642,24 +642,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jdc-WV-QLt">
-                                <rect key="frame" x="16" y="45" width="343" height="33"/>
+                                <rect key="frame" x="0.0" y="45" width="375" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWg-73-Z6O">
-                                        <rect key="frame" x="0.0" y="0.0" width="114.5" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="33"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="CANCEL">
                                             <color key="titleColor" red="0.93617749210000001" green="0.32650941610000001" blue="0.3137699068" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelButtonPressed:" destination="KV7-u4-UNq" eventType="touchUpInside" id="n3a-gc-KKC"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHOTOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="RO0-cb-Vxv">
-                                        <rect key="frame" x="114.5" y="0.0" width="114" height="33"/>
+                                        <rect key="frame" x="125" y="0.0" width="125" height="33"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDi-G7-btE">
-                                        <rect key="frame" x="228.5" y="0.0" width="114.5" height="33"/>
+                                        <rect key="frame" x="250" y="0.0" width="125" height="33"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <inset key="titleEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
                                         <state key="normal" title="SAVE">
@@ -685,7 +688,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bM7-xn-SKj">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="send icon" translatesAutoresizingMaskIntoConstraints="NO" id="bM7-xn-SKj">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                 </imageView>
                                             </subviews>
@@ -702,15 +705,18 @@
                         </subviews>
                         <color key="backgroundColor" red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="jdc-WV-QLt" secondAttribute="trailing" id="6io-fe-g3e"/>
-                            <constraint firstItem="jdc-WV-QLt" firstAttribute="top" secondItem="5Fb-97-80Z" secondAttribute="bottom" constant="25" id="Ftd-vM-bee"/>
+                            <constraint firstAttribute="trailing" secondItem="jdc-WV-QLt" secondAttribute="trailing" id="07k-8D-deJ"/>
+                            <constraint firstItem="0dD-N2-edM" firstAttribute="top" secondItem="jdc-WV-QLt" secondAttribute="bottom" constant="25" id="3va-Mq-F6k"/>
                             <constraint firstItem="0dD-N2-edM" firstAttribute="leading" secondItem="Ezw-NK-mVU" secondAttribute="leadingMargin" id="JBW-U9-gPg"/>
-                            <constraint firstItem="0dD-N2-edM" firstAttribute="top" secondItem="jdc-WV-QLt" secondAttribute="bottom" constant="25" id="gyf-ta-clg"/>
-                            <constraint firstItem="jdc-WV-QLt" firstAttribute="leading" secondItem="Ezw-NK-mVU" secondAttribute="leadingMargin" id="pl1-gM-sKn"/>
+                            <constraint firstItem="jdc-WV-QLt" firstAttribute="leading" secondItem="Ezw-NK-mVU" secondAttribute="leading" id="YrJ-bY-bGO"/>
                             <constraint firstItem="0nh-2e-gV3" firstAttribute="top" secondItem="0dD-N2-edM" secondAttribute="bottom" id="wbW-O2-zUl"/>
+                            <constraint firstItem="jdc-WV-QLt" firstAttribute="top" secondItem="5Fb-97-80Z" secondAttribute="bottom" constant="25" id="xYz-w2-dn0"/>
                             <constraint firstItem="0dD-N2-edM" firstAttribute="trailing" secondItem="Ezw-NK-mVU" secondAttribute="trailingMargin" id="zMQ-9r-jKa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="collectionView" destination="0dD-N2-edM" id="dtn-0a-1H7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l9L-St-HzR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -720,5 +726,6 @@
     <resources>
         <image name="pencil" width="18" height="17"/>
         <image name="plus" width="29" height="29"/>
+        <image name="send icon" width="289" height="275"/>
     </resources>
 </document>
