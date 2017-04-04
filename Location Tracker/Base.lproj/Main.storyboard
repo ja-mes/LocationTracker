@@ -690,7 +690,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="LLX-4w-IHR">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="LLX-4w-IHR" customClass="PhotoCell" customModule="Location_Tracker" customModuleProvider="target">
                                         <rect key="frame" x="46.5" y="0.0" width="250" height="250"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -719,6 +719,9 @@
                                             <constraint firstItem="bM7-xn-SKj" firstAttribute="leading" secondItem="LLX-4w-IHR" secondAttribute="leading" id="qws-lZ-JQ2"/>
                                             <constraint firstAttribute="trailing" secondItem="bM7-xn-SKj" secondAttribute="trailing" id="zwF-j6-OY6"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="bM7-xn-SKj" id="tMV-QM-xS6"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
