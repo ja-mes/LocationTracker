@@ -70,6 +70,10 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         return UITableViewCell();
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "EditVC", sender: controller.object(at: indexPath))
+    }
+    
     
 
     
@@ -148,13 +152,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLo
         ad.saveContext()
     }
     
-    @IBAction func editButtonPressed(_ sender: UIButton) {
-        let buttonPostion = sender.convert(CGPoint.zero, to: tableView)
-        if let indexPath = tableView.indexPathForRow(at: buttonPostion) {
-            performSegue(withIdentifier: "EditVC", sender: controller.object(at: indexPath))
-        }
-    }
-    
+
     @IBAction func addButtonPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "EditVC", sender: nil)
     }
