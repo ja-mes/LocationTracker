@@ -147,11 +147,13 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
         controller.delegate = self
         
-        do {
-            try controller.performFetch()
-        } catch {
-            let error = error as NSError
-            print(error.localizedDescription)
+        if record != nil {
+            do {
+                try controller.performFetch()
+            } catch {
+                let error = error as NSError
+                print(error.localizedDescription)
+            }
         }
     }
     
