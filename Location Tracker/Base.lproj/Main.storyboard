@@ -78,7 +78,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rwx-B2-1sa">
-                                                    <rect key="frame" x="206" y="18" width="105" height="41.5"/>
+                                                    <rect key="frame" x="252" y="18" width="105" height="41.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:00 PM" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odf-NF-hle">
                                                             <rect key="frame" x="0.0" y="0.0" width="105" height="22"/>
@@ -118,35 +118,16 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TbN-eG-QIR" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
-                                                    <rect key="frame" x="331" y="8" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="tZe-gR-XMY"/>
-                                                        <constraint firstAttribute="width" constant="30" id="zXM-TE-k46"/>
-                                                    </constraints>
-                                                    <state key="normal" image="pencil"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="rounded">
-                                                            <real key="value" value="15"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <connections>
-                                                        <action selector="editButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7OQ-EV-mbt"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" red="0.0039215686274509803" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="brN-dd-70w" secondAttribute="bottom" id="3P6-Gu-RuL"/>
                                                 <constraint firstAttribute="trailing" secondItem="brN-dd-70w" secondAttribute="trailing" id="9p9-4X-d6K"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="TbN-eG-QIR" secondAttribute="trailing" constant="6" id="AX2-v5-Wxj"/>
-                                                <constraint firstItem="TbN-eG-QIR" firstAttribute="leading" secondItem="rwx-B2-1sa" secondAttribute="trailing" constant="20" id="Di1-gB-xHC"/>
                                                 <constraint firstItem="rwx-B2-1sa" firstAttribute="centerY" secondItem="r3X-a9-MMe" secondAttribute="centerY" id="MTC-S7-FIw"/>
                                                 <constraint firstItem="3vG-uT-dds" firstAttribute="centerY" secondItem="r3X-a9-MMe" secondAttribute="centerY" id="S6O-Mr-8cQ"/>
                                                 <constraint firstItem="brN-dd-70w" firstAttribute="leading" secondItem="r3X-a9-MMe" secondAttribute="leading" id="bRx-el-hz5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="rwx-B2-1sa" secondAttribute="trailing" constant="10" id="iX3-PL-RTD"/>
                                                 <constraint firstItem="3vG-uT-dds" firstAttribute="leading" secondItem="r3X-a9-MMe" secondAttribute="leadingMargin" constant="10" id="uoR-f7-2KM"/>
-                                                <constraint firstItem="TbN-eG-QIR" firstAttribute="top" secondItem="r3X-a9-MMe" secondAttribute="topMargin" id="vsJ-VO-VD8"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -748,7 +729,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil" width="18" height="17"/>
         <image name="plus" width="29" height="29"/>
     </resources>
 </document>
