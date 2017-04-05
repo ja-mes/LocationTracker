@@ -83,6 +83,27 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let photo = controller.object(at: indexPath)
+        
+        let alertController = UIAlertController(title: "", message: "Are you sure you want to delete this photo?", preferredStyle: .actionSheet)
+        
+        alertController.popoverPresentationController?.sourceView = view
+        alertController.popoverPresentationController?.sourceRect = CGRect(x: 0, y: view.frame.height, width: 0, height: 0)
+        alertController.popoverPresentationController?.permittedArrowDirections = .up
+        
+        let deleteAction = UIAlertAction(title: "Delete Photo", style: .destructive, handler: { (action) in
+            context.delete(photo)
+            ad.saveContext()
+        })
+        alertController.addAction(deleteAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             if let imageData = UIImageJPEGRepresentation(pickedImage, 1) {
