@@ -236,7 +236,7 @@
                                                                             </userDefinedRuntimeAttribute>
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
-                                                                            <segue destination="KV7-u4-UNq" kind="show" identifier="PhotoVC" id="uvt-LN-F0V"/>
+                                                                            <action selector="photoButtonPressed:" destination="dIf-vh-E8a" eventType="touchUpInside" id="6Tp-LF-BP1"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lrY-Ai-naw" customClass="CustomButton" customModule="Location_Tracker" customModuleProvider="target">
@@ -578,6 +578,7 @@
                         <outlet property="titleLbl" destination="u97-LN-eRk" id="awe-ZO-o6s"/>
                         <outlet property="zipField" destination="PzP-cK-L32" id="wG8-Yy-drC"/>
                         <segue destination="MaS-bu-UMo" kind="show" identifier="MapVC" id="RQv-69-LNj"/>
+                        <segue destination="KV7-u4-UNq" kind="show" identifier="PhotoVC" id="ka9-Mo-E6V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8pg-ta-IPN" userLabel="First Responder" sceneMemberID="firstResponder"/>

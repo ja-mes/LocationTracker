@@ -75,6 +75,7 @@ class EditVC: UIViewController, UITextFieldDelegate {
         
         if segue.identifier == "PhotoVC" {
             if let destination = segue.destination as? PhotoVC {
+                
                 destination.record = record
             }
         }
@@ -153,6 +154,11 @@ class EditVC: UIViewController, UITextFieldDelegate {
     @IBAction func viewMapPressed(_ sender: CustomButton) {
         save()
         performSegue(withIdentifier: "MapVC", sender: nil)
+    }
+    
+    @IBAction func photoButtonPressed(_ sender: UIButton) {
+        save()
+        performSegue(withIdentifier: "PhotoVC", sender: nil)
     }
     
     // MARK: func
