@@ -9,6 +9,6 @@
 import UIKit
 
 class PhotoCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: CustomImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
 }

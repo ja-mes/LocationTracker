@@ -88,6 +88,7 @@ class PhotoVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataS
             if let imageData = UIImageJPEGRepresentation(pickedImage, 1) {
                 let photo = Photo(context: context)
                 photo.image = imageData as NSData
+                photo.date = NSDate()
                 record?.addToPhotos(photo)
             }
         } else {
